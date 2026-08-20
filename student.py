@@ -1,12 +1,16 @@
 # Student Information System..........
-
 def marks(subject):
     while True:
-        marks = float(input("Enter " + subject + " Marks: "))
-        if marks >= 0 and marks <= 100:
-            return marks
-        else:
-            print("Invalid Marks Please enter marks between 0 and 100.")
+        try:
+            mark = float(input("Enter " + subject + " Marks: "))
+
+            if 0 <= mark <= 100:
+                return mark
+            else:
+                print("Invalid Marks! Enter 0 to 100.")
+
+        except ValueError:
+            print("Please enter numeric marks only.")
 
 students = []
 
